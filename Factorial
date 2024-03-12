@@ -1,0 +1,18 @@
+8085 code to find the factorial of a number:
+lhld 5500H
+mov b, l
+mvi d, 00H
+mvi e, 01H
+repeat: call multiply
+xchg
+dcr b
+jnz repeat
+shld 4510H
+hlt
+multiply: mov c, b
+mvi h, 00H
+mvi l, 00H
+loop: dad d
+dcr c
+jnz loop
+ret
